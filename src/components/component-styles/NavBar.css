@@ -1,0 +1,14 @@
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 70px;
+    z-index: 1000;
+    background: linear-gradient(to right, #3498db, #8e44ad);
+    font-size: larger;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+  

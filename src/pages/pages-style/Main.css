@@ -1,0 +1,98 @@
+.main-container {
+    display: flex;
+    height: 100vh; /* Full viewport height */
+    width: 100vw;  /* Full viewport width */
+}
+
+.left-side {
+    flex: 1; /* 25% of the page */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Aligns items horizontally */
+    justify-content: flex-start; /* Aligns items vertically to the top */
+    padding: 50px;
+    margin-left: 50px;
+    margin-top: 50px;
+    background-color: #f4f4f4;
+}
+
+
+.middle-side {
+    margin-top: 50px;
+    max-width: 150%;
+    display: flex;
+    flex-direction: column;
+    padding-top: 30px;
+    padding-left: 30px;
+    background-color: white;
+}
+
+.right-side {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding: 50px;
+    background-color: #f4f4f4;
+}
+
+/* Ensuring images fit within their container */
+.profile-image {
+    width: 100%;
+    
+    object-fit: cover;
+}
+
+.social-links {
+    margin-top: 15px;
+    padding-right: 80px;
+    font-size: x-large;
+}
+
+.social-links a {
+    display: block;
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+    margin-top: 5px;
+    padding-left: 30px;
+}
+
+.social-links a:hover {
+    color: #0056b3;
+}
+
+/* Social Icons */
+.social-logo, .social-logo-mail {
+    width: 80px;
+    height: 80px;
+    margin-right: 8px;
+}
+
+/* Typewriter Animation */
+@keyframes typewriter {
+    from { width: 0%; }
+    to { width: 38%; }
+}
+
+h1 {
+    font-size: 60px;
+    background-image: linear-gradient(to right, #3498db, #8e44ad);
+    color: transparent;
+    background-clip: text;
+}
+
+.typewriter-animated {
+    font-size: 120px;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: typewriter 2s steps(25) forwards, blink 1000ms steps(25) infinite normal;
+    border-right: 5px solid black;
+    background-image: linear-gradient(to right, #3498db, #8e44ad);
+    color: transparent;
+    background-clip: text;
+}
+
+@keyframes blink {
+    from { border-color: black; }
+    to { border-color: transparent; }
+}
