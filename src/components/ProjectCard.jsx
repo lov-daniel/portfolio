@@ -19,7 +19,7 @@ export default function ProjectCard({ details, filter }) {
             <Card
                 sx={{
                     width: "100%",
-                    minHeight: 150,
+                    height: "100%",
                     backgroundColor: "#ffffffff",
                     borderRadius: 2,
                     position: "relative",
