@@ -45,8 +45,8 @@ export default function Projects() {
         background: "#000000ff",
         flexDirection: "column",
         justifySelf: "center",
-        width: "90%",
-        height: "85%",
+        width: "85vw",
+        height: "85vh",
         margin: "auto"
       }}
       p={2}>
@@ -83,8 +83,8 @@ export default function Projects() {
             alignContent: "center",
             alignItems: "flex-start",
             gap: 5,
-            height: "100%",
-            width: "50%",
+            height: "72vh",
+            width: "50vw",
           }}
           p={2}>
 
@@ -116,8 +116,8 @@ export default function Projects() {
             display: "grid",
             gridTemplateColumns: "repeat(5, 1fr)",
             gap: 4,
-            width: "100%",
-            height: "100%",
+            width: "100vw",
+            height: "72vh",
             overflowY: "auto",
             gridAutoRows: 200,
             padding: 2,
