@@ -1,10 +1,28 @@
-function Projects() {
+import { Typography } from "@mui/material"
 
-    return <>
+export default function Projects() {
+
+    return <section
+      id="projects"
+      style={{
+        height: "100vh",
+        backgroundImage: "url('/images/sky.jpg')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
     
-    <p>projects</p>
+    >
+            <Typography
+            sx={{
+                padding: "1rem",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center"
+            }}
+            fontSize="2vw"
+            color='#ffffff'>
+            PROJECTS AND EXPERIENCE
+        </Typography>
 
-    </>
+    </section>
 }
-
-export default Projects;

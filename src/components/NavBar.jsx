@@ -1,24 +1,26 @@
-import './component-styles/NavBar.css'
-import { Outlet } from 'react-router-dom';
+import { Box, Button } from '@mui/material'
 
-function NavBar() {
+function NavBar(props) {
 
-    return (
-        <div className='nav-wrapper'>
-    <nav className="navbar navbar-expand-lg navbar-light bg-light">
-    <a className="navbar-brand" href="#">Daniel Lov</a>
-    <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-      <span className="navbar-toggler-icon"></span>
-    </button>
-    <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
-      <div className="navbar-nav">
-        <a className="nav-item nav-link active" href="/">Home <span className="sr-only">(current)</span></a>
-        <a className="nav-item nav-link" href="/projects">Projects</a>
-      </div>
-    </div>
-  </nav>
-  <Outlet/>
-  </div>);
+    const { activeTab } = props;
+
+    const categories = [
+      "HOME",
+      "PROJECTS",
+      "CONTACT ME"
+    ]
+
+    return <>
+
+    <Box sx={{display: "flex"}}>
+      {categories.map((category, i) => 
+      <Button
+      key={i}
+      href={`#${category.toLowerCase()}`}
+      sx={{color: category === activeTab ? '#5481e2ff' : '#FFFFFF', fontSize: "1vw", margin: "1rem"}}> {category} 
+      </Button>)}
+    </Box>
+    </>
 
 }
 
