@@ -9,9 +9,7 @@ export default function Experience() {
         backgroundImage: "url('/images/sky.jpg')",
         backgroundSize: "cover",
         backgroundPosition: "center",
-      }}
-    
-    >
+      }}>
             <Typography
             sx={{
                 padding: "1rem",

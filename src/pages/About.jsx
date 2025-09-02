@@ -1,5 +1,4 @@
 import { Box, Typography } from '@mui/material'
-import Navbar from '../components/NavBar.jsx';
 
 export default function About() {
 

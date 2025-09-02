@@ -1,9 +1,14 @@
 import { Box, Button } from '@mui/material'
-import { Link, Element } from 'react-scroll'; 
+import { Link } from 'react-scroll'; 
+import { useState } from 'react';
 
-function NavBar(props) {
+export default function NavBar() {
 
-    const { activeTab } = props;
+    const [activeTab, setActiveTab] = useState("HOME")
+
+    const handleChange = (category) => {
+      setActiveTab(category);
+    };
 
     const categories = [
       "HOME",
@@ -20,12 +25,9 @@ function NavBar(props) {
       key={i}
       sx={{color: category === activeTab ? '#5481e2ff' : '#FFFFFF', fontSize: "1vw", margin: "1rem"}}> 
       
-      <Link to={`${category.toLowerCase()}`} smooth={true} duration={500} offset={-70}> {category} </Link>
+      <Link to={`${category.toLowerCase()}`} onClick={() => handleChange(category)} smooth={true} duration={500} offset={-70}> {category} </Link>
       
       </Button>)}
     </Box>
     </>
-
 }
-
-export default NavBar;

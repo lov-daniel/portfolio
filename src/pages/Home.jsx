@@ -10,7 +10,7 @@ export default function Home() {
 
     return <>
         <Box>
-            <Navbar activeTab="HOME"/>
+            <Navbar/>
             <About/>
             <Experience/>
             <Projects/>

@@ -9,9 +9,7 @@ export default function Contact() {
         backgroundImage: "url('/images/cave.png')",
         backgroundSize: "cover",
         backgroundPosition: "center",
-      }}
-    
-    >
+      }}>
             <Typography
             sx={{
                 padding: "1rem",
