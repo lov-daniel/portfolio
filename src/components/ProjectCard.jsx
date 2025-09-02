@@ -36,8 +36,8 @@ export default function ProjectCard({ details, filter }) {
                 }}
                 onClick={handleOpen}
             >
-                <CardContent sx={{ padding: 0 }}>
-                    <Typography sx={{ textAlign: "left" }}>
+                <CardContent>
+                    <Typography sx={{ textAlign: "left", fontSize: "0.75vw" }}>
                         {details.name}
                     </Typography>
                 </CardContent>
