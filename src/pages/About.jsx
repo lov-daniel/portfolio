@@ -4,7 +4,7 @@ import Navbar from '../components/NavBar.jsx';
 export default function About() {
 
     return <section
-      id="about"
+      id="home"
       style={{
         height: "100vh",
         backgroundImage: "url('/images/space.jpg')",

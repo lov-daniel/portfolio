@@ -6,7 +6,7 @@ export default function Projects() {
       id="projects"
       style={{
         height: "100vh",
-        backgroundImage: "url('/images/sky.jpg')",
+        backgroundImage: "url('/images/land.jpg')",
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
@@ -20,8 +20,8 @@ export default function Projects() {
                 justifyContent: "center"
             }}
             fontSize="2vw"
-            color='#ffffff'>
-            PROJECTS AND EXPERIENCE
+            color='#000000ff'>
+            PROJECTS
         </Typography>
 
     </section>

@@ -1,4 +1,5 @@
 import { Box, Button } from '@mui/material'
+import { Link, Element } from 'react-scroll'; 
 
 function NavBar(props) {
 
@@ -6,18 +7,21 @@ function NavBar(props) {
 
     const categories = [
       "HOME",
+      "EXPERIENCE",
       "PROJECTS",
-      "CONTACT ME"
+      "CONTACT"
     ]
 
     return <>
 
-    <Box sx={{display: "flex"}}>
+    <Box sx={{background: "#000000ff", display: "flex", position: "sticky", top: "0"}}>
       {categories.map((category, i) => 
       <Button
       key={i}
-      href={`#${category.toLowerCase()}`}
-      sx={{color: category === activeTab ? '#5481e2ff' : '#FFFFFF', fontSize: "1vw", margin: "1rem"}}> {category} 
+      sx={{color: category === activeTab ? '#5481e2ff' : '#FFFFFF', fontSize: "1vw", margin: "1rem"}}> 
+      
+      <Link to={`${category.toLowerCase()}`} smooth={true} duration={500}> {category} </Link>
+      
       </Button>)}
     </Box>
     </>
