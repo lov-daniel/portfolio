@@ -18,7 +18,7 @@ export default function ProjectCard({ details, filter }) {
             <ProjectModal details={details} open={openModal} handleClose={handleClose} />
             <Card
                 sx={{
-                    width: "100%",
+                    width: "10vw",
                     minHeight: 150,
                     backgroundColor: "#ffffffff",
                     borderRadius: 2,

@@ -104,7 +104,7 @@ export default function Projects() {
           </Typography>
 
           {categories.map((category, i) => (
-            <Typography key={i} sx={{ cursor: "pointer", fontSize: "2rem", color: category === selectedCategory ? "#FFD700" : "#FFFFFF" }} onClick={() => handleSelection(category)}>{category === selectedCategory ? `> ${category}` : category}</Typography>
+            <Typography key={i} sx={{ cursor: "pointer", fontSize: "1.5vw", color: category === selectedCategory ? "#FFD700" : "#FFFFFF" }} onClick={() => handleSelection(category)}>{category === selectedCategory ? `> ${category}` : category}</Typography>
           ))}
         </Box>
 
