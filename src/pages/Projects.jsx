@@ -47,7 +47,7 @@ export default function Projects() {
         display: "flex",
         background: "#000000ff",
         flexDirection: "column",
-        width: "150rem",
+        width: "75vw",
         height: "50rem",
         margin: "0 auto"
       }}
@@ -82,7 +82,7 @@ export default function Projects() {
           }}
           p={2}>
           {categories.map((category, i) => (
-            <Typography key={i} sx={{ fontSize: "2rem", color: "#FFFFFF" }} onClick={() => handleSelection(category)}>{category === selectedCategory ? `> ${category}` : category}</Typography>
+            <Typography key={i} sx={{ fontSize: "2rem", color: category === selectedCategory ? "#FFD700" : "#FFFFFF" }} onClick={() => handleSelection(category)}>{category === selectedCategory ? `> ${category}` : category}</Typography>
           ))}
         </Box>
         
