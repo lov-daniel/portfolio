@@ -4,6 +4,7 @@ import Navbar from '../components/NavBar.jsx';
 import About from './About.jsx';
 import Projects from './Projects.jsx';
 import Experience from './Experience.jsx';
+import Contact from './Contact.jsx';
 
 export default function Home() {
 
@@ -13,6 +14,7 @@ export default function Home() {
             <About/>
             <Experience/>
             <Projects/>
+            <Contact/>
         </Box>
 
     </>

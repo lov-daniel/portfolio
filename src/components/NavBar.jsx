@@ -20,7 +20,7 @@ function NavBar(props) {
       key={i}
       sx={{color: category === activeTab ? '#5481e2ff' : '#FFFFFF', fontSize: "1vw", margin: "1rem"}}> 
       
-      <Link to={`${category.toLowerCase()}`} smooth={true} duration={500}> {category} </Link>
+      <Link to={`${category.toLowerCase()}`} smooth={true} duration={500} offset={-70}> {category} </Link>
       
       </Button>)}
     </Box>
