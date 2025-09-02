@@ -23,7 +23,6 @@ export default function ProjectCard({ details, filter }) {
                     backgroundColor: "#ffffffff",
                     borderRadius: 2,
                     position: "relative",
-                    padding: 2,
                     display: "flex",
                     flexDirection: "column",
                     justifyContent: "flex-end",
@@ -37,7 +36,7 @@ export default function ProjectCard({ details, filter }) {
                 onClick={handleOpen}
             >
                 <CardContent>
-                    <Typography sx={{ textAlign: "left", fontSize: "0.75vw" }}>
+                    <Typography sx={{ textAlign: "left", fontSize: "0.65vw" }}>
                         {details.name}
                     </Typography>
                 </CardContent>
