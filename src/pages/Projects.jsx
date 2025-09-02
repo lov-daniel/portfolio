@@ -24,59 +24,56 @@ export default function Projects() {
   }
 
   return <section
-    id="projects"
-    style={{
-      height: "100vh",
-      display: "flex",
-      backgroundImage: "url('/images/land.jpg')",
-      backgroundSize: "cover",
-      justifyContent: "center",
-      alignItems: "center",
-      backgroundPosition: "center",
-    }}
-
-  >
-
-    <Box
-      border="3px solid black"
-      borderRadius={3}
-      sx={{
-        display: "flex",
-        background: "#000000ff",
-        flexDirection: "column",
-        justifySelf: "center",
-        width: "85vw",
-        height: "85vh",
-        margin: "auto"
-      }}
-      p={2}>
-
+  id="projects"
+  style={{
+    height: "100vh",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "flex-start",
+    alignItems: "center",      
+    backgroundImage: "url('/images/land.jpg')",
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    paddingTop: "2rem",
+  }}
+>
+    
       <Typography
         sx={{
-          padding: "1rem",
           textDecoration: 'underline',
-          alignSelf: "center",
-          justifySelf: "center",
-          display: "flex",
-          margin: "0 auto"
+          textAlign: "center",
+          marginBottom: "0",
+          fontSize: "2vw",
+          color: '#000000ff',
         }}
 
         fontSize="2vw"
-        color='#ffffffff'>
+        color='#000000ff'>
         PROJECTS
       </Typography>
+
+    <Box
+      sx={{
+          display: "flex",
+          flexDirection: "column",
+          width: "85vw",
+          height: "85vh",
+      }}
+      p={2}>
+
       <Box sx={{
-        display: "flex",
-        alignItems: "center",
-        gap: 5,
-        flexGrow: 1
+          display: "flex",
+          alignItems: "flex-start", // align categories & grid at top
+          gap: 2,
+          height: "100%",
       }}>
 
         {/* categories */}
         <Box
-          border="3px solid white"
+          border="3px solid yellow"
           borderRadius={3}
           sx={{
+            background: "#000000ff",
             display: "flex",
             flexDirection: "column",
             justifyContent: "flex-start",
@@ -98,7 +95,7 @@ export default function Projects() {
               margin: "0 auto"
             }}
 
-            fontSize="2vw"
+            fontSize="1.5vw"
             color='#ffffffff'>
             FILTER BY
           </Typography>
@@ -110,10 +107,11 @@ export default function Projects() {
 
         {/* project list */}
         <Box
-          border="3px solid white"
+          border="3px solid yellow"
           borderRadius={3}
           sx={{
             display: "grid",
+            background: "#000000ff",
             gridTemplateColumns: "repeat(5, 1fr)",
             gap: 4,
             width: "100vw",

@@ -3,8 +3,6 @@ import { useState } from 'react';
 
 import Home from './pages/Home.jsx';
 import Start from './pages/Start.jsx'
-import Projects from './pages/Projects.jsx'
-
 
 function App() {
   const [targetPage, setTargetPage] = useState("start");
