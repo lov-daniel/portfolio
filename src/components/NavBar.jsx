@@ -23,7 +23,7 @@ export default function NavBar() {
       {categories.map((category, i) => 
       <Button
       key={i}
-      sx={{color: category === activeTab ? '#5481e2ff' : '#FFFFFF', fontSize: "1vw", margin: "1rem"}}> 
+      sx={{color: category === activeTab ? '#5481e2ff' : '#FFFFFF', fontSize: { xs: "2.5vw", sm: "1vw", md: "1vw" }, margin: "1rem"}}> 
       
       <Link to={`${category.toLowerCase()}`} onClick={() => handleChange(category)} smooth={true} duration={500} offset={-70}> {category} </Link>
       

@@ -1,11 +1,25 @@
 .name {
-    transition: all 0.2s ease-in-out;
-    font-size: 1.5rem;
-    color: #FFD700;
-    font-weight: bold; 
+  transition: all 0.2s ease-in-out;
+  font-size: 2.25vw; /* default for xs */
+  color: #FFD700;
+  font-weight: bold;
 }
 
 .name:hover {
-    text-shadow: 0 0 20px #FFD700;
-    transform: scale(1.05);
+  text-shadow: 0 0 20px #FFD700;
+  transform: scale(1.05);
+}
+
+/* sm: >=600px */
+@media (min-width: 600px) {
+  .name {
+    font-size: 1vw;
+  }
+}
+
+/* md: >=900px */
+@media (min-width: 900px) {
+  .name {
+    font-size: 1vw;
+  }
 }
