@@ -1,5 +1,5 @@
-import { Box, Typography } from '@mui/material'
-import Navbar from '../components/NavBar.jsx';
+import { Box, Typography } from '@mui/material';
+import './pages-style/About.css';
 
 export default function About() {
 
