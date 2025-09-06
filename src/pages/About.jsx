@@ -1,4 +1,4 @@
-import { Box, Typography } from '@mui/material';
+import { Box, Typography } from '@mui/material'
 import './pages-style/About.css';
 
 export default function About() {
@@ -42,7 +42,7 @@ export default function About() {
                     width: "100rem",
                 }}
                 p={2}>
-                <Typography sx={{ color: "#FFFFFF" }}>I’m <span style={{ fontSize: "1.5rem", color: "#FFD700", fontWeight: "bold" }}>Daniel Lov</span>, a passionate software developer with a love for retro games, electronics, and hands-on projects.</Typography>
+                <Typography sx={{ color: "#FFFFFF" }}>I’m <span className="name" >Daniel Lov</span>, a passionate software developer with a love for retro games, electronics, and hands-on projects.</Typography>
                 <Typography sx={{ color: "#FFFFFF", paddingTop: "1rem" }}>Here, you’ll find a mix of web development, embedded systems experiments, and fun tech experiments, all presented in a style inspired by classic arcade games.</Typography>
                 <Typography sx={{ color: "#FFFFFF", paddingTop: "1rem" }}>From building custom controllers and microcontroller projects to creating interactive web apps, I like to turn ideas into tangible experiences. Explore, play, and see what I’ve been building!</Typography>
             </Box>

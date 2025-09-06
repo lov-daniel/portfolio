@@ -1,12 +1,12 @@
 import { Typography } from "@mui/material"
 
-export default function Experience() {
+export default function Contact() {
 
     return <section
-      id="experience"
+      id="contact"
       style={{
         height: "100vh",
-        backgroundImage: "url('/images/sky.jpg')",
+        backgroundImage: "url('/images/cave.png')",
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}>
@@ -18,8 +18,8 @@ export default function Experience() {
                 justifyContent: "center"
             }}
             fontSize="2vw"
-            color='#ffffff'>
-            EXPERIENCE
+            color='#ffffffff'>
+            CONTACT ME
         </Typography>
 
     </section>
