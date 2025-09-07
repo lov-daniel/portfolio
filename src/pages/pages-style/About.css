@@ -1,8 +1,37 @@
 .name {
   transition: all 0.2s ease-in-out;
-  font-size: 2.25vw; /* default for xs */
+  font-size: 2.4vw; /* default for xs */
   color: #FFD700;
   font-weight: bold;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.media-container {
+  width: 10vw;
+}
+
+.media-button {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  aspect-ratio: 1 / 1;
+}
+
+.section-about {
+  min-height: 100vh;
+  width: 100%;
+  background-image: url('/images/space.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
 }
 
 .name:hover {
@@ -15,6 +44,14 @@
   .name {
     font-size: 1vw;
   }
+
+  .section-about {
+    min-height: 60rem;
+  }
+
+  .media-container {
+    width: 10vw;
+  }
 }
 
 /* md: >=900px */
@@ -22,4 +59,13 @@
   .name {
     font-size: 0.75vw;
   }
+
+  .section-about {
+    min-height: 80rem;
+  }
+
+  .media-container {
+    width: 2.5vw;
+  }
+
 }

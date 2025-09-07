@@ -1,21 +1,16 @@
-import { Box, Typography } from "@mui/material";
+import { useMediaQuery, useTheme, Box, Typography, Button, IconButton, Link } from "@mui/material";
 import './pages-style/About.css'
 
 export default function About() {
+
+    const theme = useTheme();
+    const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+    console.log("isMobile", isMobile);
+
     return (
         <section
             id="home"
-            style={{
-                minHeight: "100vh",
-                maxHeight: "50rem",
-                width: "100%",
-                backgroundImage: "url('/images/space.jpg')",
-                backgroundSize: "cover",
-                backgroundRepeat: "no-repeat",
-                backgroundPosition: "center",
-                display: "flex",
-                flexDirection: "column",
-            }}
+            className="section-about"
         >
             {/* Heading */}
             <Typography
@@ -73,29 +68,49 @@ export default function About() {
                     }}
                 >
                     <Typography sx={{
-                         color: "#FFFFFF", 
-                         fontSize: { xs: "2.25vw", sm: "1vw", md: "0.75vw", }
-                         }}>
+                        color: "#FFFFFF",
+                        fontSize: { xs: "2.4vw", sm: "1vw", md: "0.75vw", }
+                    }}>
                         I’m <span className="name">Daniel Lov</span>, a passionate software
                         developer with a love for retro games, electronics, and hands-on
                         projects.
                     </Typography>
                     <Typography sx={{
-                         color: "#FFFFFF",
-                         fontSize: { xs: "2.25vw", sm: "1vw", md: "0.75vw" }
-                         }}>
-                        Here, you’ll find a mix of web development, embedded systems
-                        experiments, and fun tech experiments, all presented in a style
-                        inspired by classic arcade games.
-                    </Typography>
-                    <Typography sx={{ 
                         color: "#FFFFFF",
-                        fontSize: { xs: "2.25vw", sm: "1vw", md: "0.75vw" }
-                         }}>
-                        From building custom controllers and microcontroller projects to
-                        creating interactive web apps, I like to turn ideas into tangible
-                        experiences. Explore, play, and see what I’ve been building!
+                        fontSize: { xs: "2.4vw", sm: "1vw", md: "0.75vw" }
+                    }}>
+                        I'm a junior at UC San Diego studying computer science with ambitions in web development and embedded systems firmware development.
                     </Typography>
+
+                    {/* Media box */}
+                    <Box sx={{
+                        display: "flex",
+                        justifyContent: "space-between",
+                        alignItems: "center",
+                        width: "100%",
+                        gap: isMobile ? 2 : 5
+                    }}>
+
+                        <Button
+                            size={ isMobile ? "large" : "small"}
+                            variant="outlined"
+                            component={Link}
+                            href="./resume.pdf"
+                            sx={{
+                                color: "#ffffff",
+                                maxWidth: isMobile ? "5rem" : "20rem",
+                                fontSize: {xs: "2.4vw", md: "0.75vw"}
+                            }}
+                        >
+                            Open Resume
+                        </Button>
+
+                        {!isMobile && <Box sx={{ flexGrow: 1 }} />}
+
+                            <a className="media-container" target="blank" href="https://github.com/lov-daniel"><img className="media-button" src="./icons/github.png"></img> </a>
+                            <a className="media-container" target="blank" href="https://www.linkedin.com/in/daniel-lov-512bb7292/"> <img className="media-button" src="./icons/linkedin.png"/> </a>
+                    </Box>
+
                 </Box>
             </Box>
         </section>
