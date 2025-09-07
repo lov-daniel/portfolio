@@ -53,7 +53,7 @@ export default function About() {
                     src="/profile-photo.jpg"
                     alt="Profile photo"
                     sx={{
-                        width: { xs: "50%", sm: "30%", md: "20%" },
+                        width: { xs: "50%", sm: "40%", md: "30%" },
                         height: "auto",
                         borderRadius: "8px",
                         marginBottom: { xs: 2, md: 0 },
@@ -74,7 +74,7 @@ export default function About() {
                 >
                     <Typography sx={{
                          color: "#FFFFFF", 
-                         fontSize: { xs: "2.25vw", sm: "1vw", md: "1vw" }
+                         fontSize: { xs: "2.25vw", sm: "1vw", md: "0.75vw", }
                          }}>
                         I’m <span className="name">Daniel Lov</span>, a passionate software
                         developer with a love for retro games, electronics, and hands-on
@@ -82,7 +82,7 @@ export default function About() {
                     </Typography>
                     <Typography sx={{
                          color: "#FFFFFF",
-                         fontSize: { xs: "2.25vw", sm: "1vw", md: "1vw" }
+                         fontSize: { xs: "2.25vw", sm: "1vw", md: "0.75vw" }
                          }}>
                         Here, you’ll find a mix of web development, embedded systems
                         experiments, and fun tech experiments, all presented in a style
@@ -90,7 +90,7 @@ export default function About() {
                     </Typography>
                     <Typography sx={{ 
                         color: "#FFFFFF",
-                        fontSize: { xs: "2.25vw", sm: "1vw", md: "1vw" }
+                        fontSize: { xs: "2.25vw", sm: "1vw", md: "0.75vw" }
                          }}>
                         From building custom controllers and microcontroller projects to
                         creating interactive web apps, I like to turn ideas into tangible

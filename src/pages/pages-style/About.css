@@ -20,6 +20,6 @@
 /* md: >=900px */
 @media (min-width: 900px) {
   .name {
-    font-size: 1vw;
+    font-size: 0.75vw;
   }
 }
