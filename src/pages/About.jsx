@@ -5,7 +5,6 @@ export default function About() {
 
     const theme = useTheme();
     const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
-    console.log("isMobile", isMobile);
 
     return (
         <section

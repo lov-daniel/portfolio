@@ -1,7 +1,7 @@
 import { Typography, Box } from "@mui/material"
 import { useState } from 'react'
-import projects from '../constants/projectList.jsx';
 
+import projects from '../constants/projectList.jsx';
 import ProjectCard from "../components/ProjectCard.jsx";
 
 export default function Projects() {
