@@ -10,10 +10,29 @@ export default function ExperienceCard(props) {
         
         <Box>
             <Typography 
-            sx={{fontSize: { xs: "3vw", sm: "2vw", md: "1vw" }}}
+            sx={{display: "flex", border: "solid white 5px", alignContent: "center", gap:"1.5vw", fontSize: { xs: "2vw", sm: "vw", md: "1vw" }}}
             color='#ffffffff'>
-                {details.img ? <img src={details.img}/> : <></>}
-                {details.name} — {details.organization}
+                {details.img ? 
+                    <Box
+                        component="img"
+                        src={details.img}
+                        alt={details.organization}
+                        sx={{
+                            borderRight: "solid white 5px",
+                            width: { xs: "30%", sm: "20%", md: "10%" },
+                            height:"100%",
+                            marginBottom: { xs: 2, md: 0 },
+                        }}/> : <></>}
+                <Box>
+                    <Typography sx={{fontSize: { xs: "2vw", sm: "1vw", md: "1vw" }}}>
+                        {details.name}
+                        <br/>
+                        {details.organization}
+                    </Typography>
+                    <Box>
+                        {details.start} — {details.end}
+                    </Box>
+                </Box>
             </Typography>
         </Box>
     );
