@@ -5,8 +5,6 @@ import { Box, Typography,
 
  import './pages-style/Experience.css'
 import ExperienceList from '../constants/experienceList';
-import { useState } from 'react';
-
 
 export default function Experience(props) {
     const { setTargetPage } = props;
@@ -15,7 +13,7 @@ export default function Experience(props) {
         setTargetPage(profile)
     }
 
-    return <div className='section-experience'> 
+    return <div className='experience'> 
             {/* Heading */}
             <Typography
                 sx={{
@@ -35,22 +33,63 @@ export default function Experience(props) {
             sx={{
                 display: "flex",
                 flexDirection: "column",
-                alignItems: "center", 
+                alignItems: "center",
+                width: { xs: "100%", sm: "4vw", md: "66%" },
                 gap: 2, 
                 padding: 2,
-                margin: "0 auto" 
+                margin: "0 auto", 
+                background: "black",
+                border: "4px solid yellow"
             }}
             p={2}>
+            <Typography
+            color='yellow'>
+                ★ QUEST LOG ★
+            </Typography>
+            <Box
+            sx={{
+                display: 'flex', 
+                alignItems: 'center', 
+                gap: 1,
+                width: { xs: "100%", sm: "4vw", md: "66%" },
+            }}
+            >
+            <Typography sx={{fontSize: { xs: "1.1rem", sm: "1rem", md: "1.1rem" }, color: '#ffd700', display: "inline"}}>
+                LVL 21
+            </Typography>
+            <Box sx={{ flex: 1, height: '10px', background: '#1a1a2e', border: '1px solid #444' }}>
+                {/* ill */}
+                <Box sx={{
+                height: '100%',
+                width: '72%',
+                background: 'repeating-linear-gradient(90deg, #ffd700 0px, #ffd700 8px, #c8a800 8px, #c8a800 10px)'
+                }} />
+            </Box>
+
+            <Typography sx={{ fontSize: '13px', color: '#666' }}>
+                2800 / 4000 XP
+            </Typography>
+            </Box>
+
         <List sx={{
             maxHeight: "60vh",
             display: "flex",
             flexDirection: "column",
             overflowY: "auto",
-            border: "4px solid white",
+            width: "100%",
             overflowX: "hidden",
             gap: 2, 
             padding: 2,
-            background: "black"
+            background: "black",
+            scrollbarWidth: 'none',
+
+            /* Hide scrollbar - IE/Edge */
+            msOverflowStyle: 'none',
+
+            /* Hide scrollbar - Chrome/Safari */
+            '&::-webkit-scrollbar': {
+            display: 'none',
+            },
             }}>
             {Object.entries(ExperienceList).map(([key, experience]) => {
 
@@ -59,7 +98,7 @@ export default function Experience(props) {
             sx={{
                 width: "100%",
                 flexShrink: 0,
-                border: "3px solid #FFD700",
+                borderLeft: "3px solid #FFD700",
                 backgroundColor: "#000",
                 cursor: "pointer",
                 "&:hover": {
@@ -70,7 +109,8 @@ export default function Experience(props) {
             }}
             onClick={() => handleSelect(experience.name)}
             >
-                    <CardContent>
+                <CardContent>
+                    <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
                     <Box
                         sx={{
                         display: "flex",
@@ -103,6 +143,8 @@ export default function Experience(props) {
 
                         {/* Text Content */}
                         <Box sx={{ flex: 1 }}>
+                        <Box
+                        sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
                         <Typography
                             sx={{ fontSize: { xs: "1.1rem", sm: "1rem", md: "1.1rem" } }}
                             color="#fff"
@@ -110,6 +152,28 @@ export default function Experience(props) {
                         >
                             {experience?.name}
                         </Typography>
+                        {
+                            experience?.status === "current" ?
+                                <Typography sx={{ display: 'inline-block', fontSize:{ xs: "0.75rem", sm: "0.75rem" }, padding: '2px 6px', background: '#002211', color: '#00ff88', border: '1px solid #00ff88' }}>IN PROGRESS</Typography>
+                            :
+                            experience?.status === "upcoming" ?
+                            <Typography sx={{
+                                 display: 'inline-block',
+                                  fontSize: { xs: "0.75rem", sm: "0.75rem" },
+                                   padding: '2px 6px',
+                                    background: '#002211', 
+                                    color: '#205fd3',
+                                     border: '1px solid #205fd3',
+                                       animation: 'blink 1.2s step-end infinite',
+                                        '@keyframes blink': {
+                                            '50%': { opacity: 0.4 }
+                                        }}}>
+                                        NEW QUEST
+                            </Typography>
+                            :
+                            <Typography sx={{ display: 'inline-block', fontSize: { xs: "0.75rem", sm: "0.75rem" }, padding: '2px 6px', background: '#002211', color: '#00ff88', border: '1px solid #00ff88' }}>COMPLETED</Typography>
+                        }
+                        </Box>
 
                         <Typography
                             sx={{ fontSize: { xs: "0.95rem", sm: "0.9rem" } }}
@@ -126,12 +190,24 @@ export default function Experience(props) {
                         </Typography>
                         </Box>
                     </Box>
+                        <Typography sx={{ color: '#ffd700', whiteSpace: 'nowrap' }}>
+                        +200 EXP
+                        </Typography>
+                        </Box>
                     </CardContent>
-
                 </Card>
             })}
         </List>
-
+        <Typography
+        color='white'
+        sx={{
+            textAlign: "left",
+            alignSelf: 'flex-start',
+            width: "100%",
+            display: "block"
+        }}>
+            ▲ ▼ SELECT QUEST
+        </Typography>
         </Box>
     </div>
 }

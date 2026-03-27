@@ -3,9 +3,10 @@ const experience = {
         name: "(Incoming) Software Engineer Intern",
         organization: "Viasat",
         start: "June 2026",
-        end: "Setember 2026",
+        end: "September 2026",
         img: "icons/viasat.png",
-        id: 1
+        id: 1,
+        status: "upcoming"
     },
 
     "experience2": {
@@ -14,7 +15,8 @@ const experience = {
         start: "March 2026",
         end: "June 2026",
         img: "icons/cse.png",
-        id: 2
+        id: 2,
+        status: "current"
     },
 
     "experience3": {
@@ -23,7 +25,8 @@ const experience = {
         start: "April 2025",
         end: "November 2025",
         img: "icons/caida.png",
-        id: 3
+        id: 3,
+        status: "past"
     },
 
     "experience4": {
@@ -32,7 +35,8 @@ const experience = {
         start: "September 2024",
         end: "June 2025",
         img: "icons/cse.png",
-        id: 4
+        id: 4,
+        status: "past"
     },
 
     "experience5": {
@@ -41,7 +45,8 @@ const experience = {
         start: "September 2025",
         end: "December 2025",
         img: "icons/cse.png",
-        id: 5
+        id: 5,
+        status: "past"
     },
 
     "experience6": {
@@ -50,7 +55,8 @@ const experience = {
         start: "June 2025",
         end: "July 2025",
         img: "icons/prism.png",
-        id: 6
+        id: 6,
+        status: "past"
     },
 }
 
