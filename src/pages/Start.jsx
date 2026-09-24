@@ -20,7 +20,7 @@ export default function Start(props) {
             id: 1,
             name: "Daniel Lov",
             img: "/profile-photo.jpg",
-            age: 20,
+            age: 21,
             year: "Junior",
             school: "UC San Diego",
             description: "Welcome to my portfolio — a playful, interactive space where creativity meets code!",
@@ -30,7 +30,7 @@ export default function Start(props) {
         "profile2": {
             id: 2,
             name: "PROJECT SPACE",
-            description: "Here, you’ll find a mix of web development, embedded systems experiments, and fun tech experiments, all presented in a style inspired by classic arcade games.",
+            description: "Here, you’ll find a mix of web development, embedded systems experiments, and fun tech experiments.",
             targetPage: "projects"
         },
 

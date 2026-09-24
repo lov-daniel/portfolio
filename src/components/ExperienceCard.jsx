@@ -1,39 +1,121 @@
-import { Box, Typography } from '@mui/material'
+import { Box, Typography, Card, CardContent } from '@mui/material'
+import ExperienceModal from "../components/ExperienceModal.jsx"
+import { useState } from "react";
 
 export default function ExperienceCard(props) {
     
-    const { details } = props;
+    const { experience } = props;
 
-    console.log(details)
+    const [openModal, setOpenModal] = useState(false);
+    const handleOpen = () => setOpenModal(true);
+    const handleClose = () => setOpenModal(false);
 
     return (
-        
-        <Box>
-            <Typography 
-            sx={{display: "flex", border: "solid white 5px", alignContent: "center", gap:"1.5vw", fontSize: { xs: "2vw", sm: "vw", md: "1vw" }}}
-            color='#ffffffff'>
-                {details.img ? 
+        <>
+        <ExperienceModal details={experience} open={openModal} handleClose={handleClose} />
+        <Card
+            key={experience.id}
+            sx={{
+                width: "100%",
+                flexShrink: 0,
+                borderLeft: "3px solid #FFD700",
+                backgroundColor: "#000",
+                cursor: "pointer",
+                "&:hover": {
+                boxShadow: "0 0 20px #FFD700",
+                transform: "scale(1.02)",
+                transition: "all 0.2s ease-in-out",
+                },
+            }}
+            onClick={handleOpen}
+            >
+                <CardContent>
+                    <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
                     <Box
-                        component="img"
-                        src={details.img}
-                        alt={details.organization}
                         sx={{
-                            borderRight: "solid white 5px",
-                            width: { xs: "30%", sm: "20%", md: "10%" },
-                            height:"100%",
-                            marginBottom: { xs: 2, md: 0 },
-                        }}/> : <></>}
-                <Box>
-                    <Typography sx={{fontSize: { xs: "2vw", sm: "1vw", md: "1vw" }}}>
-                        {details.name}
-                        <br/>
-                        {details.organization}
-                    </Typography>
-                    <Box>
-                        {details.start} — {details.end}
+                        display: "flex",
+                        flexDirection: { xs: "column", sm: "row" },
+                        alignItems: { xs: "center", sm: "flex-start" },
+                        textAlign: { xs: "center", sm: "left" },
+                        gap: 2,
+                        }}
+                    >
+                        {/* Image Container */}
+                        <Box
+                        sx={{
+                            width: { xs: 120, sm: 80 },
+                            height: { xs: 120, sm: 80 },
+                            flexShrink: 0,
+                            overflow: "hidden",
+                            borderRadius: 2,
+                        }}
+                        >
+                        <Box
+                            component="img"
+                            src={experience?.img}
+                            sx={{
+                            width: "100%",
+                            height: "100%",
+                            objectFit: "cover",
+                            }}
+                        />
+                        </Box>
+
+                        {/* Text Content */}
+                        <Box sx={{ flex: 1 }}>
+                        <Box
+                        sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+                        <Typography
+                            sx={{ fontSize: { xs: "1.1rem", sm: "1rem", md: "1.1rem" } }}
+                            color="#fff"
+                            fontWeight="bold"
+                        >
+                            {experience?.name}
+                        </Typography>
+                        {
+                            experience?.status === "current" ?
+                                <Typography sx={{ display: 'inline-block', fontSize:{ xs: "0.75rem", sm: "0.75rem" }, padding: '2px 6px', background: '#002211', color: '#00ff88', border: '1px solid #00ff88' }}>IN PROGRESS</Typography>
+                            :
+                            experience?.status === "upcoming" ?
+                            <Typography sx={{
+                                 display: 'inline-block',
+                                  fontSize: { xs: "0.75rem", sm: "0.75rem" },
+                                   padding: '2px 6px',
+                                    background: '#002211', 
+                                    color: '#205fd3',
+                                     border: '1px solid #205fd3',
+                                       animation: 'blink 1.2s step-end infinite',
+                                        '@keyframes blink': {
+                                            '50%': { opacity: 0.4 }
+                                        }}}>
+                                        INCOMING
+                            </Typography>
+                            :
+                            <Typography sx={{ display: 'inline-block', fontSize: { xs: "0.75rem", sm: "0.75rem" }, padding: '2px 6px', background: '#002211', color: '#00ff88', border: '1px solid #00ff88' }}>COMPLETED</Typography>
+                        }
+                        </Box>
+
+                        <Typography
+                            sx={{ fontSize: { xs: "0.95rem", sm: "0.9rem" } }}
+                            color="#ddd"
+                        >
+                            {experience?.organization}
+                        </Typography>
+
+                        <Typography
+                            sx={{ fontSize: { xs: "0.85rem", sm: "0.85rem" } }}
+                            color="#aaa"
+                        >
+                            {`${experience?.start} - ${experience?.end}`}
+                        </Typography>
+                        </Box>
                     </Box>
-                </Box>
-            </Typography>
-        </Box>
+                        <Typography sx={{ color: '#ffd700', whiteSpace: 'nowrap' }}>
+                        +200 EXP
+                        </Typography>
+                        </Box>
+                    </CardContent>
+                </Card>
+                </>
     );
 }
