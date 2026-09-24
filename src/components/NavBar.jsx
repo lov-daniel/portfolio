@@ -19,7 +19,7 @@ export default function NavBar() {
 
     return <>
 
-    <Box sx={{background: "#000000ff", display: "flex", position: "sticky", top: "0"}}>
+    <Box sx={{background: "#000000ff", display: "flex", position: "sticky", top: "0", zIndex: "1000"}}>
       {categories.map((category, i) => 
       <Button
       key={i}

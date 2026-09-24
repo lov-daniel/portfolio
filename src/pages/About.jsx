@@ -5,7 +5,6 @@ export default function About() {
 
     const theme = useTheme();
     const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
-    console.log("isMobile", isMobile);
 
     return (
         <section
@@ -79,7 +78,7 @@ export default function About() {
                         color: "#FFFFFF",
                         fontSize: { xs: "2.4vw", sm: "1vw", md: "0.75vw" }
                     }}>
-                        I'm a junior at UC San Diego studying computer science with ambitions in web development and embedded systems firmware development.
+                        I'm a senior at UC San Diego studying computer science with ambitions in full stack development. I have experience working with and implementing new features in large codebases. I specialize in cloud platform engineering with Google Cloud Platform and Amazon AWS.
                     </Typography>
 
                     {/* Media box */}

@@ -5,10 +5,10 @@ export default function ProjectModal({ details, handleClose, open }) {
     <Modal open={open} onClose={handleClose}>
       <Box
         sx={{
-          position: "absolute", // important
+          position: "absolute",
           top: "50%",
           left: "50%",
-          transform: "translate(-50%, -50%)", // centers the box
+          transform: "translate(-50%, -50%)",
           width: "75%",
           height: "75%",
           bgcolor: "#ffffffff",
