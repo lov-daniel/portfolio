@@ -19,14 +19,13 @@ export default function Projects() {
   ]
 
   const handleSelection = (category) => {
-    console.log(category);
     setCategory(category);
   }
 
   return <section
   id="projects"
   style={{
-    height: "100vh",
+    minHeight: "100vh",
     display: "flex",
     flexDirection: "column",
     justifyContent: "flex-start",
@@ -35,6 +34,7 @@ export default function Projects() {
     backgroundSize: "cover",
     backgroundPosition: "center",
     paddingTop: "2rem",
+    paddingBottom: "2rem",
   }}
 >
     
@@ -42,12 +42,10 @@ export default function Projects() {
         sx={{
           textDecoration: 'underline',
           textAlign: "center",
-          marginBottom: "0",
-          fontSize: "2vw",
+          marginBottom: "1rem",
+          fontSize: { xs: "6vw", sm: "4vw", md: "2vw" },
           color: '#000000ff',
         }}
-
-        fontSize="2vw"
         color='#000000ff'>
         PROJECTS
       </Typography>
@@ -56,13 +54,14 @@ export default function Projects() {
       sx={{
           display: "flex",
           flexDirection: "column",
-          width: "85vw",
-          height: "85vh",
+          width: { xs: "95vw", md: "85vw" },
+          minHeight: { xs: "auto", md: "85vh" },
       }}
       p={2}>
 
       <Box sx={{
           display: "flex",
+          flexDirection: { xs: "column", md: "row" },
           alignItems: "flex-start", // align categories & grid at top
           gap: 2,
           height: "100%",
@@ -75,33 +74,47 @@ export default function Projects() {
           sx={{
             background: "#000000ff",
             display: "flex",
-            flexDirection: "column",
+            flexDirection: { xs: "row", md: "column" },
             justifyContent: "flex-start",
             alignContent: "center",
-            alignItems: "flex-start",
-            gap: 5,
-            height: "72vh",
-            width: "50vw",
+            alignItems: { xs: "center", md: "flex-start" },
+            gap: { xs: 2, md: 5 },
+            height: { xs: "auto", md: "72vh" },
+            width: { xs: "100%", md: "22%" },
+            overflowX: { xs: "auto", md: "visible" },
+            flexShrink: 0,
           }}
           p={2}>
 
           <Typography
             sx={{
-              padding: "1rem",
+              padding: { xs: "0.25rem", md: "1rem" },
               textDecoration: 'underline',
               alignSelf: "center",
               justifySelf: "center",
               display: "flex",
-              margin: "0 auto"
+              margin: { xs: 0, md: "0 auto" },
+              fontSize: { xs: "0.9rem", sm: "1.1rem", md: "1.5vw" },
+              flexShrink: 0,
             }}
-
-            fontSize="1.5vw"
             color='#ffffffff'>
             FILTER BY
           </Typography>
 
           {categories.map((category, i) => (
-            <Typography key={i} sx={{ cursor: "pointer", fontSize: "1vw", color: category === selectedCategory ? "#FFD700" : "#FFFFFF" }} onClick={() => handleSelection(category)}>{category === selectedCategory ? `> ${category}` : category}</Typography>
+            <Typography
+              key={i}
+              sx={{
+                cursor: "pointer",
+                whiteSpace: "nowrap",
+                flexShrink: 0,
+                fontSize: { xs: "0.8rem", sm: "0.9rem", md: "1vw" },
+                color: category === selectedCategory ? "#FFD700" : "#FFFFFF"
+              }}
+              onClick={() => handleSelection(category)}
+            >
+              {category === selectedCategory ? `> ${category}` : category}
+            </Typography>
           ))}
         </Box>
 
@@ -110,15 +123,20 @@ export default function Projects() {
           border="3px solid yellow"
           borderRadius={3}
           sx={{
-            display: "grid",
+            display: "flex",
+            flexDirection: "column",
             background: "#000000ff",
-            gridTemplateColumns: "repeat(5, 1fr)",
-            gap: 4,
-            width: "100vw",
-            height: "72vh",
+            gap: 2,
+            width: { xs: "100%", md: "78%" },
+            height: { xs: "60vh", md: "72vh" },
             overflowY: "auto",
-            gridAutoRows: 200,
+            overflowX: "hidden",
             padding: 2,
+            scrollbarWidth: 'none',
+            msOverflowStyle: 'none',
+            '&::-webkit-scrollbar': {
+              display: 'none',
+            },
           }}
         >
           {Object.values(projects).map((project, i) => (
